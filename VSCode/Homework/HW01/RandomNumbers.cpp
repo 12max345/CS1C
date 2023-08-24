@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    cout << "test";
+    cout << "testing";
 
     return 0;
 }
