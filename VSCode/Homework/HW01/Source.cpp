@@ -7,8 +7,17 @@
  *********************************************************/
 #include "RandomNumbers.h"
 
+
+
 int main()
 {
+    srand((unsigned)time(NULL));
+
+    for (int i = 1; i <= 5; i++)
+    {
+        int randomNum = 100 + (rand() % 999);
+        cout << randomNum << endl;
+    }
 
     return 0;
 };
