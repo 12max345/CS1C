@@ -15,7 +15,7 @@ int main()
 
     for (int i = 1; i <= 5; i++)
     {
-        int randomNum = 100 + (rand() % 999);
+        int randomNum = 100 + (rand() % 901);
         cout << randomNum << endl;
     }
 
