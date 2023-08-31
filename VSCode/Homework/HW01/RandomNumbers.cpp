@@ -53,3 +53,12 @@ void RandomNumbers::randomize()
 {
     randNumber = 100 + (rand() % 901);
 }
+
+void RandomNumbers::printFile(fstream& f, int arr[])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        f >> arr[i];
+        cout << arr[i] << " ";
+    }
+}

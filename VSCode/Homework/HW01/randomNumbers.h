@@ -18,4 +18,5 @@ public:
     int numTriple();
     int digitsReverse();
     void randomize();
+    void printFile(fstream& f, int arr[]);
 };

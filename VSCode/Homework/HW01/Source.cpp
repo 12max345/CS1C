@@ -103,7 +103,7 @@ int main()
     cout << "File written" << endl << endl;
 
     cout << "File data:\n";
-    
+    arrayNum.printFile(file, randArray);
 
     return 0;
 };
