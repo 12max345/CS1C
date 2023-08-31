@@ -6,15 +6,19 @@
  * Due Date : 8/29/23
  *********************************************************/
 
-// g++ -g -o Source Source.cpp RandomNumbers.cpp RandomNumbers.h  
+// g++ -g -o Source Source.cpp RandomNumbers.cpp RandomNumbers.h
 
 #include "RandomNumbers.h"
 
 int main()
 {
+    // seed for random number generation
     srand((unsigned)time(NULL));
 
+    // creates an object of RandomNumbers
     RandomNumbers numOp;
+
+    // displays randomly generated number and asks user which operation they request
     int selection;
     do
     {
@@ -28,6 +32,7 @@ int main()
 
     cin.ignore(1000, '\n');
 
+    // checks which selection the user made and outputs result of RandomNumbers function
     if (selection == 1)
     {
         cout << "Digits summed: " << numOp.digitsSum();
@@ -40,13 +45,15 @@ int main()
     {
         cout << "Digits reversed: " << numOp.digitsReverse();
     };
-
     cout << endl
          << endl;
 
+    // new object of RandomNumbers for array
     RandomNumbers arrayNum;
+    // creates an array with 10 elements
     int randArray[10];
 
+    // fills array with a random 3 digit number for each element and displays it
     cout << "Array of 10 random numbers:\n";
     for (int i = 0; i < 10; i++)
     {
@@ -57,6 +64,7 @@ int main()
     cout << endl
          << endl;
 
+    // takes the array, sorts the values from lowest to highest
     cout << "Sorted from low to high:\n";
     for (int i = 0; i < 10; i++)
     {
@@ -70,6 +78,7 @@ int main()
             }
         }
     }
+    // displays sorted array
     for (int i = 0; i < 10; i++)
     {
         cout << randArray[i] << " ";
@@ -77,31 +86,41 @@ int main()
     cout << endl
          << endl;
 
+    // new fstream named "file"
     fstream file;
+    // opens the stream with inputs and outputs
     file.open("RandomNumbersArray.txt", ios_base::in | ios_base::out);
+    // checks if the file is opened properly and informs the user
     if (file.is_open())
     {
-        cout << "RandomNumbersArray.txt opened successfully" << endl << endl;
+        cout << "RandomNumbersArray.txt opened successfully" << endl
+             << endl;
     }
     else
     {
         cout << "RandomNumbersArray.txt failed to open" << endl;
+        // exits the program if file fails to open
         return 1;
     }
 
+    // fills the file with each element of the array
     for (int i = 0; i < 10; i++)
     {
         file << randArray[i] << " ";
     }
 
+    // attempts to close the file and informs the user on the status
     file.close();
-    if(file.is_open())
+    if (file.is_open())
     {
         cout << "File was not closed" << endl;
+        // exits the program if file fails to close
         return 1;
     }
-    cout << "File written" << endl << endl;
+    cout << "File written" << endl
+         << endl;
 
+    // displays the file data using the printFile function
     cout << "File data:\n";
     arrayNum.printFile(file, randArray);
 

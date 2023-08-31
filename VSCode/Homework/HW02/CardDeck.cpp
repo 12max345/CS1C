@@ -1,7 +1,8 @@
 #include "CardDeck.h"
 
-int main()
+CardDeck::CardDeck()
 {
-
-    return 0;
+    
 }
+
+CardDeck::~CardDeck() {}
