@@ -1,0 +1,20 @@
+Random Number: 672
+Please choose an operation
+1. Sum the digits
+2. Triple the number
+3. Reverse the digits
+1
+Digits summed: 15
+
+Array of 10 random numbers:
+208 676 361 702 454 264 497 165 137 620 
+
+Sorted from low to high:
+137 165 208 264 361 454 497 620 676 702 
+
+RandomNumbersArray.txt opened successfully
+
+File written
+
+File data:
+137 165 208 264 361 454 497 620 676 702

@@ -10,6 +10,9 @@
 
 #include "RandomNumbers.h"
 
+enum choice {ONE, TWO, THREE};
+typedef RandomNumbers rn;
+
 int main()
 {
     // seed for random number generation
@@ -104,10 +107,11 @@ int main()
     }
 
     // fills the file with each element of the array
-    for (int i = 0; i < 10; i++)
-    {
-        file << randArray[i] << " ";
-    }
+    arrayNum.writeFile(file, randArray);
+
+    // file will read elements into a new array
+    int newRandArray[10];
+    arrayNum.readFile(file, newRandArray);
 
     // attempts to close the file and informs the user on the status
     file.close();
@@ -122,7 +126,7 @@ int main()
 
     // displays the file data using the printFile function
     cout << "File data:\n";
-    arrayNum.printFile(file, randArray);
+    arrayNum.printFile(newRandArray);
 
     return 0;
 };
