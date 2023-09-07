@@ -6,16 +6,34 @@
  * Due Date : 8/31/23
  *********************************************************/
 
-// g++ -g -o Source Source.cpp CardDeck.cpp CardDeck.h
+// g++ -g -o Source Source.cpp Card.cpp Card.h
 
-#include "CardDeck.h"
+#include "Card.h"
 
-int main()
-{
-    CardDeck deck;
-    deck.printCards();
+int main() {
+  Card card;
+  Card deck[52];
+  int arrSize = 52;
 
-    cout << "test";
+  card.createDeck(deck);
 
-    return 0;
+  cout << "Here is the deck of cards:" << endl;
+  card.printCards(deck);
+  
+  card.perfectShuffle(deck, 52);
+
+  cout << "Here is the first perfect shuffle:" << endl;
+  card.printCards(deck);
+
+  // card.perfectShuffle(deck, 52);
+
+  // cout << "Here is the second perfect shuffle:" << endl;
+  // card.printCards(deck);
+
+  // card.perfectShuffle(deck, 52);
+
+  // cout << "Here is the third perfect shuffle:" << endl;
+  // card.printCards(deck);
+
+  return 0;
 };
