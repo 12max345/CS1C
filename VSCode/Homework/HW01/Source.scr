@@ -1,0 +1,95 @@
+Script started on 2023-09-07 13:42:14-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ date
+Thu 07 Sep 2023 01:42:42 PM PDT
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ ls -l
+total 504
+-rw-rw-r-- 1 cs1c cs1c    397 Sep  7 04:56 makefile
+-rw-rw-r-- 1 cs1c cs1c    373 Sep  7 04:39 output.txt
+-rw-rw-r-- 1 cs1c cs1c     40 Sep  7 04:39 RandomNumbersArray.txt
+-rw-rw-r-- 1 cs1c cs1c   1230 Sep  7 04:39 RandomNumbers.cpp
+-rw-rw-r-- 1 cs1c cs1c    426 Sep  7 04:39 RandomNumbers.h
+-rw-rw-r-- 1 cs1c cs1c 164232 Sep  7 04:58 RandomNumbers.o
+-rwxrwxr-x 1 cs1c cs1c 157952 Sep  7 04:58 [0m[01;32mSource[0m
+-rw-rw-r-- 1 cs1c cs1c   3608 Sep  7 04:39 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c 161327 Sep  7 04:39 Source.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep  7 13:42 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ make all
+make: Nothing to be done for 'all'.
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ make all[K[K[K[K[K[K[K[Kmake all
+make: Nothing to be done for 'all'.
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ ls -l
+total 504
+-rw-rw-r-- 1 cs1c cs1c    397 Sep  7 04:56 makefile
+-rw-rw-r-- 1 cs1c cs1c    373 Sep  7 04:39 output.txt
+-rw-rw-r-- 1 cs1c cs1c     40 Sep  7 04:39 RandomNumbersArray.txt
+-rw-rw-r-- 1 cs1c cs1c   1230 Sep  7 04:39 RandomNumbers.cpp
+-rw-rw-r-- 1 cs1c cs1c    426 Sep  7 04:39 RandomNumbers.h
+-rw-rw-r-- 1 cs1c cs1c 164232 Sep  7 04:58 RandomNumbers.o
+-rwxrwxr-x 1 cs1c cs1c 157952 Sep  7 04:58 [0m[01;32mSource[0m
+-rw-rw-r-- 1 cs1c cs1c   3608 Sep  7 04:39 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c 161327 Sep  7 04:39 Source.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep  7 13:42 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ /[K./Source
+Random Number: 760
+Please choose an operation
+1. Sum the digits
+2. Triple the number
+3. Reverse the digits
+1
+Digits summed: 13
+
+Array of 10 random numbers:
+180 434 759 884 111 296 321 412 700 160 
+
+Sorted from low to high:
+111 160 180 296 321 412 434 700 759 884 
+
+RandomNumbersArray.txt opened successfully
+
+File written
+
+File data:
+111 160 180 296 321 412 434 700 759 884 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ ./Source
+Random Number: 161
+Please choose an operation
+1. Sum the digits
+2. Triple the number
+3. Reverse the digits
+2
+Number tripled: 483
+
+Array of 10 random numbers:
+706 433 292 929 932 335 323 824 361 294 
+
+Sorted from low to high:
+292 294 323 335 361 433 706 824 929 932 
+
+RandomNumbersArray.txt opened successfully
+
+File written
+
+File data:
+292 294 323 335 361 433 706 824 929 932 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ ./Source
+Random Number: 646
+Please choose an operation
+1. Sum the digits
+2. Triple the number
+3. Reverse the digits
+3
+Digits reversed: 646
+
+Array of 10 random numbers:
+294 837 829 922 602 589 454 961 842 524 
+
+Sorted from low to high:
+294 454 524 589 602 829 837 842 922 961 
+
+RandomNumbersArray.txt opened successfully
+
+File written
+
+File data:
+294 454 524 589 602 829 837 842 922 961 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW01[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW01[00m$ exit
+exit
+
+Script done on 2023-09-07 13:46:08-07:00 [COMMAND_EXIT_CODE="0"]
