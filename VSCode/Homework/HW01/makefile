@@ -14,4 +14,4 @@ clean:
 	rm *.o Source Source.tar Source.scr
 
 tar:
-	tar cf Source.tar Source.scr Makefile Source.cpp RandomNumbers.h RandomNumbers.cpp
+	tar cf Source.tar Source.scr makefile Source.cpp RandomNumbers.h RandomNumbers.cpp
