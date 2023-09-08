@@ -9,11 +9,14 @@
 // g++ -g -o Source Source.cpp Deck.cpp Deck.h
 
 #include "Deck.h"
-
+// main function
 int main() {
+  // creates object of Deck
   Deck deck;
+  // prints out the entire deck in order
   deck.printDeck();
   cout << endl;
+  // does a perfect shuffle of the deck and then displays it
   deck.perfectShuffle(52);
   deck.printDeck();
 
