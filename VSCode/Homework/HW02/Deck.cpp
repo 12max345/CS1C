@@ -116,7 +116,7 @@ void Deck::perfectShuffle(int arrSize)
   int half_index = 0;
   for(int i = arrSize / 2; i < arrSize; i++)
   {
-    deck[i] = latterHalf[i];
+    latterHalf[i-26] = deck[i];
   }
   queue<Card> q;
   q.push(deck[0]);
