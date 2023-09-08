@@ -11,7 +11,11 @@
 #include "Deck.h"
 
 int main() {
-
+  Deck deck;
+  deck.printDeck();
+  cout << endl;
+  deck.perfectShuffle(52);
+  deck.printDeck();
 
   return 0;
 };

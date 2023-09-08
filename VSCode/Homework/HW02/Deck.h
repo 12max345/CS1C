@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <queue>
 
 using namespace std;
 
@@ -29,18 +30,13 @@ enum ranks
     ACE
 };
 
-class Card
+struct Card
 {
-private:
+
     suits suitType;
     ranks rankType;
 
-public:
-    Card();
-    ~Card();
-    suits getSuitType();
-    ranks getRankType();
-    void printCard(Card c);
+    void printCard();
 };
 
 class Deck
@@ -52,6 +48,6 @@ public:
     Deck();
     ~Deck();
     void initializeDeck();
-    void printCards();
-    void perfectShuffle(Card arr[], int arrSize);
+    void printDeck();
+    void perfectShuffle(int arrSize);
 };
