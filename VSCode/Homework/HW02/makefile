@@ -1,17 +1,17 @@
 CC = g++
 FLAGS = -std=c++17 -Wall -g
-OBJS = CardDeck.o
+OBJS = Deck.o
 
 all: Source
 
-Source: Source.cpp CardDeck.o
+Source: Source.cpp Deck.o
 	$(CC) $(FLAGS) Source.cpp -o Source $(OBJS)
 
-CardDeck.o: CardDeck.cpp CardDeck.h
-	$(CC) $(FLAGS) -c CardDeck.cpp -o CardDeck.o
+Deck.o: Deck.cpp Deck.h
+	$(CC) $(FLAGS) -c Deck.cpp -o Deck.o
 
 clean:
 	rm *.o Source Source.tar Source.scr
 
 tar:
-	tar cf Source.tar Source.scr makefile Source.cpp CardDeck.h CardDeck.cpp
+	tar cf Source.tar Source.scr makefile Source.cpp Deck.h Deck.cpp

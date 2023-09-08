@@ -1,10 +1,69 @@
-#include "Card.h"
+#include "Deck.h"
 
 Card::Card() {}
 
 Card::~Card() {}
 
-void Card::createDeck(Card deck[]) {
+suits Card::getSuitType()
+{
+  return suitType;
+}
+
+ranks Card::getRankType()
+{
+  return rankType;
+}
+
+void Card::printCard(Card c)
+{
+  for (int i = 0; i < 52; i++) {
+    if (c.rankType == TWO)
+      cout << "Two ";
+    else if (c.rankType == THREE)
+      cout << "Three ";
+    else if (c.rankType == FOUR)
+      cout << "Four ";
+    else if (c.rankType == FIVE)
+      cout << "Five ";
+    else if (c.rankType == SIX)
+      cout << "Six ";
+    else if (c.rankType == SEVEN)
+      cout << "Seven ";
+    else if (c.rankType == EIGHT)
+      cout << "Eight ";
+    else if (c.rankType == NINE)
+      cout << "Nine ";
+    else if (c.rankType == TEN)
+      cout << "Ten ";
+    else if (c.rankType == JACK)
+      cout << "Jack ";
+    else if (c.rankType == QUEEN)
+      cout << "Queen ";
+    else if (c.rankType == KING)
+      cout << "King ";
+    else if (c.rankType == ACE)
+      cout << "Ace ";
+    cout << "of ";
+    if (c.suitType == CLUBS)
+      cout << "Clubs\n";
+    else if (c.suitType == DIAMONDS)
+      cout << "Diamonds\n";
+    else if (c.suitType == HEARTS)
+      cout << "Hearts\n";
+    else if (c.suitType == SPADES)
+      cout << "Spades\n";
+  }
+  cout << endl;
+}
+
+Deck::Deck()
+{
+  initializeDeck();
+}
+
+Deck::~Deck() {}
+
+void Deck::initializeDeck() {
   int i = 0;
 
   for (suits suitType = CLUBS; suitType <= SPADES;
@@ -18,7 +77,7 @@ void Card::createDeck(Card deck[]) {
   }
 }
 
-void Card::printCards(Card deck[]) {
+void Deck::printCards() {
   for (int i = 0; i < 52; i++) {
     if (deck[i].rankType == TWO)
       cout << "Two ";
@@ -59,7 +118,7 @@ void Card::printCards(Card deck[]) {
   cout << endl;
 }
 
-void Card::perfectShuffle(Card deck[], int arrSize) {
+void Deck::perfectShuffle(Card arr[], int arrSize) {
   int halfDeck = arrSize / 2;
   for (int i = halfDeck; i < arrSize; i++) {
     for (int j = 0; j < halfDeck; j++) {
