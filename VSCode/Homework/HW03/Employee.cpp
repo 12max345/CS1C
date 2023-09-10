@@ -1,5 +1,21 @@
 #include "Employee.h"
 
+Date::Date() {
+    formatDate();
+}
+
+Date::Date(int m, int d, int y)
+{
+    
+}
+
+Date::~Date() {}
+
+void Date::formatDate()
+{
+
+}
+
 Employee::Employee()
 {
     name = "";

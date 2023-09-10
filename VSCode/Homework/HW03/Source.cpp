@@ -6,6 +6,8 @@
  * Due Date : 9/7/23
  *********************************************************/
 
+// g++ -g -o Source Source.cpp Employee.cpp Employee.h
+
 #include "Employee.h"
 
 int main()

@@ -2,6 +2,20 @@
 
 using namespace std;
 
+class Date
+{
+    private:
+    int month;
+    int day;
+    int year;
+
+    public:
+    Date();
+    Date(int m, int d, int y);
+    ~Date();
+    void formatDate();
+
+};
 class Employee
 {
 private:
@@ -23,6 +37,11 @@ public:
 class Programmer : public Employee
 {
 private:
+    string depName;
+    string supName;
+    int salIncrease;
+    bool knowsCPP;
+    bool knowsJava;
 
 public:
 
@@ -31,6 +50,10 @@ public:
 class SoftwareArchitect : public Employee
 {
 private:
+    string depName;
+    string supName;
+    int salIncrease;
+    int yearsOfExp;
 
 public:
 
