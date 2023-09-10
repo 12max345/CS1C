@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// enum of card suits
 enum suits
 {
     CLUBS,
@@ -13,6 +14,7 @@ enum suits
     SPADES
 };
 
+// enum of card ranks
 enum ranks
 {
     TWO,
@@ -30,6 +32,7 @@ enum ranks
     ACE
 };
 
+// creates a struct of cards including enums alongside a printCard() function
 struct Card
 {
 
@@ -39,6 +42,7 @@ struct Card
     void printCard();
 };
 
+// creates deck class with a card array and several functions to perform on the deck
 class Deck
 {
 private:
@@ -49,5 +53,7 @@ public:
     ~Deck();
     void initializeDeck();
     void printDeck();
-    void perfectShuffle(int arrSize);
+    void perfectShuffle();
+    bool isSameCard(Deck d1, Deck d2);
+    void shufflesRequired(Deck copy);
 };

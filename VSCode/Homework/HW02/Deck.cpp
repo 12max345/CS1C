@@ -1,5 +1,6 @@
 #include "Deck.h"
 
+// prints a single card
 void Card::printCard()
 {
   for (int i = 0; i < 52; i++)
@@ -43,13 +44,16 @@ void Card::printCard()
   cout << endl;
 }
 
+// constructor
 Deck::Deck()
 {
   initializeDeck();
 }
 
+// deconstructor
 Deck::~Deck() {}
 
+// assigns a deck full of 52 unique cards
 void Deck::initializeDeck()
 {
   int i = 0;
@@ -67,6 +71,7 @@ void Deck::initializeDeck()
   }
 }
 
+// prints entire deck
 void Deck::printDeck()
 {
   for (int i = 0; i < 52; i++)
@@ -110,29 +115,60 @@ void Deck::printDeck()
   cout << endl;
 }
 
-void Deck::perfectShuffle(int arrSize)
+// performs a perfect shuffle on the deck
+void Deck::perfectShuffle()
 {
   Card latterHalf[26];
   int half_index = 0;
-  for(int i = arrSize / 2; i < arrSize; i++)
+  for (int i = 52 / 2; i < 52; i++)
   {
-    latterHalf[i-26] = deck[i];
+    latterHalf[i - 26] = deck[i];
   }
   queue<Card> q;
   q.push(deck[0]);
-  for (int i = 0; i < arrSize; i++)
+  for (int i = 0; i < 52; i++)
   {
-    if(i % 2 == 0)
+    if (i % 2 == 0)
     {
       deck[i] = q.front();
       q.pop();
-      q.push(deck[i+1]);
+      q.push(deck[i + 1]);
     }
     else
     {
       deck[i] = latterHalf[half_index];
       half_index++;
-      q.push(deck[i+1]);
+      q.push(deck[i + 1]);
     }
   }
+}
+
+// checks if 2 decks have any mismatch cards
+bool Deck::isSameCard(Deck d1, Deck d2)
+{
+  for (int i = 0; i < 52; i++)
+  {
+    if ((d1.deck[i].rankType != d2.deck[i].rankType) && (d1.deck[i].suitType != d2.deck[i].suitType))
+      return false;
+  }
+  return true;
+}
+
+// checks and reports how many shuffles are required for the decks original configuration
+void Deck::shufflesRequired(Deck original)
+{
+  int remainingShuffles = 0;
+  Deck currentCopy;
+  for (int i = 0; i < 52; i++)
+  {
+    currentCopy.deck[i] = deck[i];
+  }
+
+  for (int i = 0; !isSameCard(original, currentCopy); i++)
+  {
+    remainingShuffles++;
+    currentCopy.perfectShuffle();
+  }
+  cout << "Shuffles required to original deck: " << remainingShuffles << endl
+       << endl;
 }
