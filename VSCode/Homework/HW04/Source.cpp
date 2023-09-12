@@ -64,7 +64,7 @@ int main()
     stephenColbert.addAge(5);
 
     // adds to age with operator+
-    stephenColbert+2;
+    stephenColbert + 2;
 
     // prints all of an Employee to prove that age was modified
     stephenColbert.printAll();

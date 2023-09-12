@@ -92,8 +92,9 @@ bool operator==(Employee emp1, Employee emp2)
 
 int operator+(Employee emp, int add)
 {
-    return emp.age = emp.age + add;
+    emp.age = emp.age + add;
     cout << add << " years have been added to the age of " << emp.name << ". They are now " << emp.age << " years old." << endl;
+    return emp.age;
 }
 
 void comparePhoneNums(Employee emp1, Employee emp2)
