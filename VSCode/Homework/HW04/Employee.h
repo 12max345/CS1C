@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 using namespace std;
@@ -15,7 +16,8 @@ public:
     Date();
     Date(int m, int d, int y);
     ~Date();
-    void printFormatDate()const;
+    friend istream &operator>>(istream &screen, Date &newDate);
+    void printFormatDate() const;
 };
 
 // Employee class which is the base class
@@ -44,10 +46,12 @@ public:
     void setSalary(int salary);
     void setHireDate(Date hireDate);
     void addAge(int add);
-    friend bool operator==(Employee emp1, Employee emp2);
-    friend int operator+(Employee emp, int add);
     friend void comparePhoneNums(Employee emp1, Employee emp2);
-    void printAll()const;
+    friend bool operator==(Employee emp1, Employee emp2);
+    friend int operator+(Employee &emp, int add);
+    friend istream &operator>>(istream &screen, Employee &newEmp);
+    friend ostream &operator<<(ostream &screen, Employee emp);
+    void printAll() const;
 };
 
 // Programmer class derived from Employee
@@ -70,26 +74,5 @@ public:
     void setSalIncrease(int salIncrease);
     void setKnowsCPP(bool knowsCPP);
     void setKnowsJava(bool knowsJava);
-    void printAll()const;
-};
-
-// SoftwareArchitect class derived from Employee
-class SoftwareArchitect : public Employee
-{
-private:
-    int depNum;
-    string supName;
-    int salIncrease;
-    int yearsOfExp;
-
-public:
-    SoftwareArchitect();
-    SoftwareArchitect(string name, int id, string phoneNum, int age, char gender, string title, int salary, Date hireDate,
-                      int depNum, string supName, int salIncrease, int yearsOfExp);
-    ~SoftwareArchitect();
-    void setDepNum(int depNum);
-    void setSupName(string supName);
-    void setSalIncrease(int salIncrease);
-    void setYearsOfExp(int yearsOfExp);
-    void printAll()const;
+    void printAll() const;
 };

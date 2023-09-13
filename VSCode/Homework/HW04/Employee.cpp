@@ -13,7 +13,18 @@ Date::Date(int m, int d, int y) : month{m}, day{d}, year{y}
 
 Date::~Date() {}
 
-void Date::printFormatDate()const
+istream &operator>>(istream &screen, Date &newDate)
+{
+    cout << "Month: ";
+    screen >> newDate.month;
+    cout << "Day: ";
+    screen >> newDate.day;
+    cout << "Year: ";
+    screen >> newDate.year;
+    return screen;
+}
+
+void Date::printFormatDate() const
 {
     cout << month << "/" << day << "/" << year;
 }
@@ -83,20 +94,6 @@ void Employee::addAge(int add)
     cout << add << " years have been added to the age of " << this->name << ". They are now " << this->age << " years old." << endl;
 }
 
-bool operator==(Employee emp1, Employee emp2)
-{
-    if (emp1.phoneNum == emp2.phoneNum)
-        return true;
-    return false;
-}
-
-int operator+(Employee emp, int add)
-{
-    emp.age = emp.age + add;
-    cout << add << " years have been added to the age of " << emp.name << ". They are now " << emp.age << " years old." << endl;
-    return emp.age;
-}
-
 void comparePhoneNums(Employee emp1, Employee emp2)
 {
     if (emp1.phoneNum == emp2.phoneNum)
@@ -109,7 +106,71 @@ void comparePhoneNums(Employee emp1, Employee emp2)
     }
 }
 
-void Employee::printAll()const
+bool operator==(Employee emp1, Employee emp2)
+{
+    if (emp1.phoneNum == emp2.phoneNum)
+        return true;
+    return false;
+}
+
+int operator+(Employee &emp, int add)
+{
+    emp.age = emp.age + add;
+    cout << add << " years have been added to the age of " << emp.name << ". They are now " << emp.age << " years old." << endl;
+    return emp.age;
+}
+
+istream &operator>>(istream &screen, Employee &newEmp)
+{
+    cout << "Input employee's Name: ";
+    getline(screen, newEmp.name);
+
+    cout << "Input employee's ID: ";
+    screen >> newEmp.id;
+    screen.ignore(10000, '\n');
+
+    cout << "Input employee's Phone Number: ";
+    getline(screen, newEmp.phoneNum);
+
+    cout << "Input employee's Age: ";
+    screen >> newEmp.age;
+    screen.ignore(10000, '\n');
+
+    cout << "Input employee's Gender: ";
+    screen >> newEmp.gender;
+    screen.ignore(10000, '\n');
+
+    cout << "Input employee's Job Title: ";
+    getline(screen, newEmp.title);
+
+    cout << "Input employee's Salary: $";
+    screen >> newEmp.salary;
+    screen.ignore(10000, '\n');
+
+    cout << "Input employee's Hire Date" << endl;
+    screen >> newEmp.hireDate;
+    screen.ignore(10000, '\n');
+    cout << endl;
+
+    return screen;
+}
+
+ostream &operator<<(ostream &screen, Employee emp)
+{
+    screen << "Name: " << emp.name << endl
+           << "Employee's ID: " << emp.id << endl
+           << "Phone: " << emp.phoneNum << endl
+           << "Age: " << emp.age << endl
+           << "Gender: " << emp.gender << endl
+           << "Job Title: " << emp.title << endl
+           << "Salary: $" << emp.salary << endl
+           << "Hire Date: ";
+    emp.hireDate.printFormatDate();
+    screen << endl;
+    return screen;
+}
+
+void Employee::printAll() const
 {
     cout << "Name: " << name << endl
          << "Employee's ID: " << id << endl
@@ -166,7 +227,7 @@ void Programmer::setKnowsJava(bool knowsJava)
     this->knowsJava = knowsJava;
 }
 
-void Programmer::printAll()const
+void Programmer::printAll() const
 {
     string cpp;
     string java;
@@ -195,50 +256,4 @@ void Programmer::printAll()const
          << "Raise %: " << salIncrease << endl
          << "C++ Knowledge: " << cpp << endl
          << "Java Knowledge: " << java << endl;
-}
-
-SoftwareArchitect::SoftwareArchitect()
-{
-    depNum = 0;
-    supName = "";
-    salIncrease = 0;
-    yearsOfExp = 0;
-}
-
-SoftwareArchitect::SoftwareArchitect(string name, int id, string phoneNum, int age, char gender, string title, int salary, Date hireDate,
-                                     int depNum, string supName, int salIncrease, int yearsOfExp)
-    : Employee{name, id, phoneNum, age, gender, title, salary, hireDate},
-      depNum{depNum}, supName{supName}, salIncrease{salIncrease}, yearsOfExp{yearsOfExp}
-{
-}
-
-SoftwareArchitect::~SoftwareArchitect() {}
-
-void SoftwareArchitect::setDepNum(int depNum)
-{
-    this->depNum = depNum;
-}
-
-void SoftwareArchitect::setSupName(string supName)
-{
-    this->supName = supName;
-}
-
-void SoftwareArchitect::setSalIncrease(int salIncrease)
-{
-    this->salIncrease = salIncrease;
-}
-
-void SoftwareArchitect::setYearsOfExp(int yearsOfExp)
-{
-    this->yearsOfExp = yearsOfExp;
-}
-
-void SoftwareArchitect::printAll()const
-{
-    Employee::printAll();
-    cout << "Department: " << depNum << endl
-         << "Supervisor's Name: " << supName << endl
-         << "Raise %: " << salIncrease << endl
-         << "Years of Experience: " << yearsOfExp << endl;
 }
