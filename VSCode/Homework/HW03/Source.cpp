@@ -6,9 +6,15 @@
  * Due Date : 9/7/23
  *********************************************************/
 
-// g++ -g -o Source Source.cpp Employee.cpp Employee.h
+/* EMPLOYEE INHERITANCE
+This program will be used to help create several employees of different types that can be initialized with various traits. The assignment requires that there should be 3 classes of Employee with two of them being derived titled Programmer and SoftwareArchitect. The program should be able to print the values, edit them, and display the changes.
+*/
+
+// g++ -g -o Source Source.cpp Date.cpp Date.h Employee.cpp Employee.h Programmer.cpp Programmer.h SoftwareArchitect.cpp SoftwareArchitect.h
 
 #include "Employee.h"
+#include "Programmer.h"
+#include "SoftwareArchitect.h"
 
 int main()
 {
@@ -32,6 +38,7 @@ int main()
     SoftwareArchitect sallyDesigner("Sally Designer", 87878, "310-555-8888", 38, 'F', "Architect", 870123, {2, 8, 2003}, 6543422, "Big Boss", 8, 11);
 
     // prints out the default constructors for all 3 classes
+    cout << "BEFORE CHANGE" << endl;
     baseEmployee.printAll();
     cout << endl;
     baseProgrammer.printAll();
@@ -71,7 +78,7 @@ int main()
     alexArch.setSalIncrease(1);
     sallyDesigner.setYearsOfExp(40);
 
-    // prints out all classes after editing several data members 
+    // prints out all classes after editing several data members
     cout << "AFTER CHANGE" << endl;
     jimmyFallon.printAll();
     cout << endl;
