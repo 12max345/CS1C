@@ -23,4 +23,4 @@ clean:
 	rm *.o Source Source.tar Source.scr
 
 tar:
-	tar cf Source.tar Source.scr makefile Source.cpp Date.h Date.cpp Employee.h Employee.cpp
+	tar cf Source.tar Source.scr makefile Source.cpp Date.h Date.cpp Employee.h Employee.cpp Programmer.h Programmer.cpp SoftwareArchitect.h SoftwareArchitect.cpp

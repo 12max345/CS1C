@@ -1,0 +1,263 @@
+Script started on 2023-09-19 16:23:56-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ date
+Tue 19 Sep 2023 04:24:02 PM PDT
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ ls -l
+total 816
+-rw-rw-r-- 1 cs1c cs1c    248 Sep 19 16:17 Date.cpp
+-rw-rw-r-- 1 cs1c cs1c    530 Sep 19 16:17 Date.h
+-rw-rw-r-- 1 cs1c cs1c 154032 Sep 19 16:18 Date.o
+-rw-rw-r-- 1 cs1c cs1c   1390 Sep 19 16:17 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c   1518 Sep 19 16:17 Employee.h
+-rw-rw-r-- 1 cs1c cs1c 209592 Sep 19 16:18 Employee.o
+-rw-rw-r-- 1 cs1c cs1c    802 Sep 19 16:23 makefile
+-rw-rw-r-- 1 cs1c cs1c   1521 Sep 19 16:17 Programmer.cpp
+-rw-rw-r-- 1 cs1c cs1c   1520 Sep 19 16:17 Programmer.h
+-rw-rw-r-- 1 cs1c cs1c 211000 Sep 19 16:18 Programmer.o
+-rw-rw-r-- 1 cs1c cs1c   1227 Sep 19 16:17 SoftwareArchitect.cpp
+-rw-rw-r-- 1 cs1c cs1c   1329 Sep 19 16:17 SoftwareArchitect.h
+-rw-rw-r-- 1 cs1c cs1c 209520 Sep 19 16:18 SoftwareArchitect.o
+-rw-rw-r-- 1 cs1c cs1c   3771 Sep 19 14:17 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 19 16:23 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ make all
+g++ -std=c++17 -Wall -g Source.cpp -o Source Date.o Employee.o Programmer.o SoftwareArchitect.o
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ ls -l
+total 1188
+-rw-rw-r-- 1 cs1c cs1c    248 Sep 19 16:17 Date.cpp
+-rw-rw-r-- 1 cs1c cs1c    530 Sep 19 16:17 Date.h
+-rw-rw-r-- 1 cs1c cs1c 154032 Sep 19 16:18 Date.o
+-rw-rw-r-- 1 cs1c cs1c   1390 Sep 19 16:17 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c   1518 Sep 19 16:17 Employee.h
+-rw-rw-r-- 1 cs1c cs1c 209592 Sep 19 16:18 Employee.o
+-rw-rw-r-- 1 cs1c cs1c    802 Sep 19 16:23 makefile
+-rw-rw-r-- 1 cs1c cs1c   1521 Sep 19 16:17 Programmer.cpp
+-rw-rw-r-- 1 cs1c cs1c   1520 Sep 19 16:17 Programmer.h
+-rw-rw-r-- 1 cs1c cs1c 211000 Sep 19 16:18 Programmer.o
+-rw-rw-r-- 1 cs1c cs1c   1227 Sep 19 16:17 SoftwareArchitect.cpp
+-rw-rw-r-- 1 cs1c cs1c   1329 Sep 19 16:17 SoftwareArchitect.h
+-rw-rw-r-- 1 cs1c cs1c 209520 Sep 19 16:18 SoftwareArchitect.o
+-rwxrwxr-x 1 cs1c cs1c 378488 Sep 19 16:24 [0m[01;32mSource[0m
+-rw-rw-r-- 1 cs1c cs1c   3771 Sep 19 14:17 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 19 16:23 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ ./Source
+BEFORE CHANGE
+Name: 
+Employee's ID: 0
+Phone: 
+Age: 0
+Gender:  
+Job Title: 
+Salary: $0
+Hire Date: 0/0/0
+
+Name: 
+Employee's ID: 0
+Phone: 
+Age: 0
+Gender:  
+Job Title: 
+Salary: $0
+Hire Date: 0/0/0
+Department: 0
+Supervisor's Name: 
+Raise %: 0
+C++ Knowledge: No
+Java Knowledge: No
+
+Name: 
+Employee's ID: 0
+Phone: 
+Age: 0
+Gender:  
+Job Title: 
+Salary: $0
+Hire Date: 0/0/0
+Department: 0
+Supervisor's Name: 
+Raise %: 0
+Years of Experience: 0
+
+Name: Jimmy Fallon
+Employee's ID: 12345
+Phone: 949-555-1234
+Age: 40
+Gender: M
+Job Title: Comedian
+Salary: $100000
+Hire Date: 8/31/2014
+
+Name: Stephen Colbert
+Employee's ID: 12346
+Phone: 310-555-5555
+Age: 51
+Gender: M
+Job Title: Comedian
+Salary: $70123
+Hire Date: 5/8/2015
+
+Name: James Corden
+Employee's ID: 87654
+Phone: 703-703-1234
+Age: 37
+Gender: M
+Job Title: Talk Show Host
+Salary: $900000
+Hire Date: 12/25/2014
+
+Name: Katie Couric
+Employee's ID: 77777
+Phone: 203-555-6789
+Age: 58
+Gender: F
+Job Title: News Reporter
+Salary: $500500
+Hire Date: 3/1/2005
+
+Name: Sam Software
+Employee's ID: 54321
+Phone: 819-123-4567
+Age: 21
+Gender: M
+Job Title: Programmer
+Salary: $223000
+Hire Date: 12/24/2011
+Department: 5432122
+Supervisor's Name: Joe Boss
+Raise %: 4
+C++ Knowledge: Yes
+Java Knowledge: No
+
+Name: Mary Coder
+Employee's ID: 65432
+Phone: 310-555-5555
+Age: 28
+Gender: F
+Job Title: Programmer
+Salary: $770123
+Hire Date: 2/8/2010
+Department: 6543222
+Supervisor's Name: Mary Leader
+Raise %: 7
+C++ Knowledge: Yes
+Java Knowledge: Yes
+
+Name: Alex Arch
+Employee's ID: 88888
+Phone: 819-123-4444
+Age: 31
+Gender: M
+Job Title: Architect
+Salary: $323000
+Hire Date: 12/24/2009
+Department: 5434222
+Supervisor's Name: Big Boss
+Raise %: 5
+Years of Experience: 4
+
+Name: Sally Designer
+Employee's ID: 87878
+Phone: 310-555-8888
+Age: 38
+Gender: F
+Job Title: Architect
+Salary: $870123
+Hire Date: 2/8/2003
+Department: 6543422
+Supervisor's Name: Big Boss
+Raise %: 8
+Years of Experience: 11
+
+AFTER CHANGE
+Name: Jim Fallon
+Employee's ID: 12345
+Phone: 949-555-1234
+Age: 40
+Gender: M
+Job Title: Comedian
+Salary: $100000
+Hire Date: 8/31/2014
+
+Name: Stephen Colbert
+Employee's ID: 64321
+Phone: 310-555-5555
+Age: 51
+Gender: M
+Job Title: Comedian
+Salary: $70123
+Hire Date: 5/8/2015
+
+Name: James Corden
+Employee's ID: 87654
+Phone: 703-703-1234
+Age: 30
+Gender: M
+Job Title: Talk Show Host
+Salary: $900000
+Hire Date: 12/25/2014
+
+Name: Katie Couric
+Employee's ID: 77777
+Phone: 203-555-6789
+Age: 58
+Gender: M
+Job Title: News Reporter
+Salary: $500500
+Hire Date: 3/1/2005
+
+Name: Sam Software
+Employee's ID: 54321
+Phone: 819-123-4567
+Age: 21
+Gender: M
+Job Title: Programmer
+Salary: $223000
+Hire Date: 5/10/2000
+Department: 5432122
+Supervisor's Name: Joe Boss
+Raise %: 4
+C++ Knowledge: Yes
+Java Knowledge: No
+
+Name: Mary Coder
+Employee's ID: 65432
+Phone: 310-555-5555
+Age: 28
+Gender: F
+Job Title: Programmer
+Salary: $770123
+Hire Date: 2/8/2010
+Department: 6543222
+Supervisor's Name: Mary Leader
+Raise %: 7
+C++ Knowledge: No
+Java Knowledge: Yes
+
+Name: Alex Arch
+Employee's ID: 88888
+Phone: 819-123-4444
+Age: 31
+Gender: M
+Job Title: Architect
+Salary: $323000
+Hire Date: 12/24/2009
+Department: 5434222
+Supervisor's Name: Big Boss
+Raise %: 1
+Years of Experience: 4
+
+Name: Sally Designer
+Employee's ID: 87878
+Phone: 310-555-8888
+Age: 38
+Gender: F
+Job Title: Architect
+Salary: $870123
+Hire Date: 2/8/2003
+Department: 6543422
+Supervisor's Name: Big Boss
+Raise %: 8
+Years of Experience: 40
+
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW03[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW03[00m$ exit
+exit
+
+Script done on 2023-09-19 16:24:20-07:00 [COMMAND_EXIT_CODE="0"]

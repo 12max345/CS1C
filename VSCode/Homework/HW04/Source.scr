@@ -1,0 +1,84 @@
+Script started on 2023-09-12 18:17:10-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ date
+Tue 12 Sep 2023 06:17:20 PM PDT
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ls -l
+total 308
+-rw-rw-r-- 1 cs1c cs1c   5486 Sep 12 18:16 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c   2000 Sep 12 18:16 Employee.h
+-rw-rw-r-- 1 cs1c cs1c    352 Sep 12 18:16 makefile
+-rw-rw-r-- 1 cs1c cs1c   2940 Sep 12 18:16 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c 293091 Sep 12 18:16 Source.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 12 18:17 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ make all
+g++ -std=c++17 -Wall -g -c Employee.cpp -o Employee.o
+g++ -std=c++17 -Wall -g Source.cpp -o Source Employee.o
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ls -l
+total 768
+-rw-rw-r-- 1 cs1c cs1c   5486 Sep 12 18:16 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c   2000 Sep 12 18:16 Employee.h
+-rw-rw-r-- 1 cs1c cs1c 234232 Sep 12 18:17 Employee.o
+-rw-rw-r-- 1 cs1c cs1c    352 Sep 12 18:16 makefile
+-rwxrwxr-x 1 cs1c cs1c 231392 Sep 12 18:17 [0m[01;32mSource[0m
+-rw-rw-r-- 1 cs1c cs1c   2940 Sep 12 18:16 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c 293091 Sep 12 18:16 Source.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 12 18:17 Source.scr
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ./Source
+False phone comparison of Jimmy and Sam using member function:
+These phone numbers are not equal.
+
+True phone comparison of Jimmy and Sam after edit:
+These phone numbers are equal.
+
+True phone comparison of Jimmy and Sam using overloaded ==:
+These phone numbers are equal.
+
+False phone comparison of Jimmy and Sam after edit:
+These phone numbers are not equal.
+
+
+5 years have been added to the age of Stephen Colbert. They are now 56 years old.
+
+2 years have been added to the age of Stephen Colbert. They are now 58 years old.
+
+Name: Stephen Colbert
+Employee's ID: 12346
+Phone: 310-555-5555
+Age: 58
+Gender: M
+Job Title: Comedian
+Salary: $70123
+Hire Date: 5/8/2015
+
+Name: Stephen Colbert
+Employee's ID: 12346
+Phone: 310-555-5555
+Age: 58
+Gender: M
+Job Title: Comedian
+Salary: $70123
+Hire Date: 5/8/2015
+
+Input employee's Name: Joey Jon
+Input employee's ID: 12345
+Input employee's Phone Number: 700-700-3456
+Input employee's Age: 21
+Input employee's Gender: M
+Input employee's Job Title: Student
+Input employee's Salary: $12 3
+Input employee's Hire Date
+Month: 10
+Day: 22
+Year: 2002
+
+Name: Joey Jon
+Employee's ID: 12345
+Phone: 700-700-3456
+Age: 21
+Gender: M
+Job Title: Student
+Salary: $13
+Hire Date: 10/22/2002
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ exit
+exit
+
+Script done on 2023-09-12 18:18:34-07:00 [COMMAND_EXIT_CODE="0"]
