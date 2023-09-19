@@ -13,7 +13,7 @@ Date::Date(int m, int d, int y) : month{m}, day{d}, year{y}
 
 Date::~Date() {}
 
-void Date::printFormatDate()
+void Date::printFormatDate()const
 {
     cout << month << "/" << day << "/" << year;
 }

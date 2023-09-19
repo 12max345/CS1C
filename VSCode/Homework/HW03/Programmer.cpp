@@ -43,7 +43,7 @@ void Programmer::setKnowsJava(bool knowsJava)
     this->knowsJava = knowsJava;
 }
 
-void Programmer::printAll()
+void Programmer::printAll()const
 {
     string cpp;
     string java;

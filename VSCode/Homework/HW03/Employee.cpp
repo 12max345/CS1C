@@ -59,7 +59,7 @@ void Employee::setHireDate(Date hireDate)
     this->hireDate = hireDate;
 }
 
-void Employee::printAll()
+void Employee::printAll()const
 {
     cout << "Name: " << name << endl
          << "Employee's ID: " << id << endl

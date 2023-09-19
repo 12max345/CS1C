@@ -15,5 +15,19 @@ public:
     Date();
     Date(int m, int d, int y);
     ~Date();
-    void printFormatDate();
+
+    /* METHOD
+    void printFormatDate()const
+
+    This method is meant to format the date and print it out to the screen.
+
+    Pre-Condition
+    A constructed Date object.
+
+    Post-Condition
+    Printed out date that is formatted.
+    
+    */
+
+    void printFormatDate()const;
 };

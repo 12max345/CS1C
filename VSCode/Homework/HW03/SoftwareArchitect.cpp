@@ -37,7 +37,7 @@ void SoftwareArchitect::setYearsOfExp(int yearsOfExp)
     this->yearsOfExp = yearsOfExp;
 }
 
-void SoftwareArchitect::printAll()
+void SoftwareArchitect::printAll()const
 {
     Employee::printAll();
     cout << "Department: " << depNum << endl
