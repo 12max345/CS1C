@@ -6,21 +6,70 @@
  * Due Date : 9/19/23
  *********************************************************/
 
-// g++ -g -o Source Source.cpp Lottery.cpp Lottery.h
+// This program is designed to take a vector of 51 numbers and randomize it. After doing so, 6 random values will be picked and outputted for the user.
 
-#include "Lottery.h"
+// g++ -g -o Source Source.cpp
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+/* METHOD
+vector<int> Lotto(int cardSpotAmt, int cardSpotSelected)
+
+This function is meant to fill an array with a selected amount of spots while resizing it down to how many spots are selected by the parameter.
+
+Pre-Condition
+    2 variables need to be passed for amount and selected
+
+Post-Condition
+    A vector will be returned with the resized amount
+
+*/
+
+vector<int> Lotto(int cardSpotAmt, int cardSpotSelected);
 
 int main()
 {
+    // Random Seed Generation
+    srand(time(0));
+
+    // creates the vector winners and assigns it from the Lotto() function
     vector<int> winners;
+    winners = Lotto(51, 6);
+
+    // outputs the vector after it has been randomized
+    cout << "51 choices and 6 random winners" << endl << endl;
+    cout << "The winning numbers are: ";
+    for (int i = 0; i < 6; i++)
+    {
+        cout << winners[i] << " ";
+    }
+
     return 0;
 };
 
+vector<int> Lotto(int cardSpotAmt, int cardSpotSelected)
+{
+    vector<int> temp;
+    for (int i = 1; i <= cardSpotAmt; i++)
+    {
+        temp.push_back(i);
+    }
 
-/* 
+    random_shuffle(temp.begin(), temp.end());
+
+    temp.resize(cardSpotSelected);
+
+    return temp;
+}
+
+/*
 1. What is the STL? What is a vector?
 
-    STL is the Standard Template Library which has classes to help handle data structers. 
+    STL is the Standard Template Library which has classes to help handle data structers.
     A vector is a dynamic array which can resize itself and contains various functions to alter the data.
 
 
