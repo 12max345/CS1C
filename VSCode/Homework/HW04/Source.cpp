@@ -6,9 +6,10 @@
  * Due Date : 9/14/23
  *********************************************************/
 
-// g++ -g -o Source Source.cpp Employee.cpp Employee.h
+// g++ -g -o Source Source.cpp Date.cpp Date.h Employee.cpp Employee.h Programmer.cpp Programmer.h
 
 #include "Employee.h"
+#include "Programmer.h"
 
 int main()
 {

@@ -1,34 +1,5 @@
 #include "Employee.h"
 
-Date::Date()
-{
-    month = 0;
-    day = 0;
-    year = 0;
-}
-
-Date::Date(int m, int d, int y) : month{m}, day{d}, year{y}
-{
-}
-
-Date::~Date() {}
-
-istream &operator>>(istream &screen, Date &newDate)
-{
-    cout << "Month: ";
-    screen >> newDate.month;
-    cout << "Day: ";
-    screen >> newDate.day;
-    cout << "Year: ";
-    screen >> newDate.year;
-    return screen;
-}
-
-void Date::printFormatDate() const
-{
-    cout << month << "/" << day << "/" << year;
-}
-
 Employee::Employee()
 {
     name = "";
@@ -170,7 +141,7 @@ ostream &operator<<(ostream &screen, Employee emp)
     return screen;
 }
 
-void Employee::printAll() const
+void Employee::printAll()const
 {
     cout << "Name: " << name << endl
          << "Employee's ID: " << id << endl
@@ -182,78 +153,4 @@ void Employee::printAll() const
          << "Hire Date: ";
     hireDate.printFormatDate();
     cout << endl;
-}
-
-Programmer::Programmer()
-{
-    depNum = 0;
-    supName = "";
-    salIncrease = 0;
-    knowsCPP = false;
-    knowsJava = false;
-}
-
-Programmer::Programmer(string name, int id, string phoneNum, int age, char gender, string title, int salary, Date hireDate,
-                       int depNum, string supName, int salIncrease, bool knowsCPP, bool knowsJava)
-    : Employee{name, id, phoneNum, age, gender, title, salary, hireDate},
-      depNum{depNum}, supName{supName}, salIncrease{salIncrease}, knowsCPP{knowsCPP}, knowsJava{knowsJava}
-{
-}
-
-Programmer::~Programmer() {}
-
-void Programmer::setDepNum(int depNum)
-{
-    this->depNum = depNum;
-}
-
-void Programmer::setSupName(string supName)
-{
-    this->supName = supName;
-}
-
-void Programmer::setSalIncrease(int salIncrease)
-{
-    this->salIncrease = salIncrease;
-}
-
-void Programmer::setKnowsCPP(bool knowsCPP)
-{
-    this->knowsCPP = knowsCPP;
-}
-
-void Programmer::setKnowsJava(bool knowsJava)
-{
-    this->knowsJava = knowsJava;
-}
-
-void Programmer::printAll() const
-{
-    string cpp;
-    string java;
-
-    if (knowsCPP)
-    {
-        cpp = "Yes";
-    }
-    else
-    {
-        cpp = "No";
-    }
-
-    if (knowsJava)
-    {
-        java = "Yes";
-    }
-    else
-    {
-        java = "No";
-    }
-
-    Employee::printAll();
-    cout << "Department: " << depNum << endl
-         << "Supervisor's Name: " << supName << endl
-         << "Raise %: " << salIncrease << endl
-         << "C++ Knowledge: " << cpp << endl
-         << "Java Knowledge: " << java << endl;
 }
