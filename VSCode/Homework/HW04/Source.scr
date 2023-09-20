@@ -1,27 +1,37 @@
-Script started on 2023-09-12 18:17:10-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
-]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ date
-Tue 12 Sep 2023 06:17:20 PM PDT
+Script started on 2023-09-19 17:44:23-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ls[K[Kdate
+Tue 19 Sep 2023 05:44:25 PM PDT
 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ls -l
-total 308
--rw-rw-r-- 1 cs1c cs1c   5486 Sep 12 18:16 Employee.cpp
--rw-rw-r-- 1 cs1c cs1c   2000 Sep 12 18:16 Employee.h
--rw-rw-r-- 1 cs1c cs1c    352 Sep 12 18:16 makefile
--rw-rw-r-- 1 cs1c cs1c   2940 Sep 12 18:16 Source.cpp
--rw-rw-r-- 1 cs1c cs1c 293091 Sep 12 18:16 Source.exe
--rw-rw-r-- 1 cs1c cs1c      0 Sep 12 18:17 Source.scr
+total 32
+-rw-rw-r-- 1 cs1c cs1c  474 Sep 19 17:38 Date.cpp
+-rw-rw-r-- 1 cs1c cs1c 1022 Sep 19 17:38 Date.h
+-rw-rw-r-- 1 cs1c cs1c 3529 Sep 19 17:38 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c 3883 Sep 19 17:38 Employee.h
+-rw-rw-r-- 1 cs1c cs1c  592 Sep 19 17:43 makefile
+-rw-rw-r-- 1 cs1c cs1c 1521 Sep 19 17:38 Programmer.cpp
+-rw-rw-r-- 1 cs1c cs1c 1513 Sep 19 17:38 Programmer.h
+-rw-rw-r-- 1 cs1c cs1c 3008 Sep 19 17:38 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c    0 Sep 19 17:44 Source.scr
 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ make all
+g++ -std=c++17 -Wall -g -c Date.cpp -o Date.o
 g++ -std=c++17 -Wall -g -c Employee.cpp -o Employee.o
-g++ -std=c++17 -Wall -g Source.cpp -o Source Employee.o
+g++ -std=c++17 -Wall -g -c Programmer.cpp -o Programmer.o
+g++ -std=c++17 -Wall -g Source.cpp -o Source Date.o Employee.o Programmer.o
 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ls -l
-total 768
--rw-rw-r-- 1 cs1c cs1c   5486 Sep 12 18:16 Employee.cpp
--rw-rw-r-- 1 cs1c cs1c   2000 Sep 12 18:16 Employee.h
--rw-rw-r-- 1 cs1c cs1c 234232 Sep 12 18:17 Employee.o
--rw-rw-r-- 1 cs1c cs1c    352 Sep 12 18:16 makefile
--rwxrwxr-x 1 cs1c cs1c 231392 Sep 12 18:17 [0m[01;32mSource[0m
--rw-rw-r-- 1 cs1c cs1c   2940 Sep 12 18:16 Source.cpp
--rw-rw-r-- 1 cs1c cs1c 293091 Sep 12 18:16 Source.exe
--rw-rw-r-- 1 cs1c cs1c      0 Sep 12 18:17 Source.scr
+total 936
+-rw-rw-r-- 1 cs1c cs1c    474 Sep 19 17:38 Date.cpp
+-rw-rw-r-- 1 cs1c cs1c   1022 Sep 19 17:38 Date.h
+-rw-rw-r-- 1 cs1c cs1c 154920 Sep 19 17:44 Date.o
+-rw-rw-r-- 1 cs1c cs1c   3529 Sep 19 17:38 Employee.cpp
+-rw-rw-r-- 1 cs1c cs1c   3883 Sep 19 17:38 Employee.h
+-rw-rw-r-- 1 cs1c cs1c 223344 Sep 19 17:44 Employee.o
+-rw-rw-r-- 1 cs1c cs1c    592 Sep 19 17:43 makefile
+-rw-rw-r-- 1 cs1c cs1c   1521 Sep 19 17:38 Programmer.cpp
+-rw-rw-r-- 1 cs1c cs1c   1513 Sep 19 17:38 Programmer.h
+-rw-rw-r-- 1 cs1c cs1c 213488 Sep 19 17:44 Programmer.o
+-rwxrwxr-x 1 cs1c cs1c 326056 Sep 19 17:44 [0m[01;32mSource[0m
+-rw-rw-r-- 1 cs1c cs1c   3008 Sep 19 17:38 Source.cpp
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 19 17:44 Source.scr
 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ ./Source
 False phone comparison of Jimmy and Sam using member function:
 These phone numbers are not equal.
@@ -58,27 +68,27 @@ Job Title: Comedian
 Salary: $70123
 Hire Date: 5/8/2015
 
-Input employee's Name: Joey Jon
-Input employee's ID: 12345
-Input employee's Phone Number: 700-700-3456
-Input employee's Age: 21
+Input employee's Name: Joe Joey
+Input employee's ID: 12543
+Input employee's Phone Number: 9497177127
+Input employee's Age: 23
 Input employee's Gender: M
-Input employee's Job Title: Student
-Input employee's Salary: $12 3
+Input employee's Job Title: Hom   Stu   C C Architect
+Input employee's Salary: $200000
 Input employee's Hire Date
 Month: 10
 Day: 22
 Year: 2002
 
-Name: Joey Jon
-Employee's ID: 12345
-Phone: 700-700-3456
-Age: 21
+Name: Joe Joey
+Employee's ID: 12543
+Phone: 9497177127
+Age: 23
 Gender: M
-Job Title: Student
-Salary: $13
+Job Title: Architect
+Salary: $200000
 Hire Date: 10/22/2002
 ]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW04[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW04[00m$ exit
 exit
 
-Script done on 2023-09-12 18:18:34-07:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2023-09-19 17:45:27-07:00 [COMMAND_EXIT_CODE="0"]
