@@ -33,9 +33,6 @@ vector<int> Lotto(int cardSpotAmt, int cardSpotSelected);
 
 int main()
 {
-    // Random Seed Generation
-    srand(time(0));
-
     // creates the vector winners and assigns it from the Lotto() function
     vector<int> winners;
     winners = Lotto(51, 6);
@@ -59,7 +56,7 @@ vector<int> Lotto(int cardSpotAmt, int cardSpotSelected)
         temp.push_back(i);
     }
 
-    random_shuffle(temp.begin(), temp.end());
+    shuffle(temp.begin(), temp.end(), time(0));
 
     temp.resize(cardSpotSelected);
 
