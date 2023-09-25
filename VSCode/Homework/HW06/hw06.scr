@@ -1,0 +1,45 @@
+Script started on 2023-09-24 19:30:04-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ date
+Sun 24 Sep 2023 07:30:05 PM PDT
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ ls -l
+total 200
+-rw-rw-r-- 1 cs1c cs1c   2344 Sep 24 19:29 hw06.cpp
+-rw-rw-r-- 1 cs1c cs1c 196358 Sep 24 19:29 hw06.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 24 19:30 hw06.scr
+-rw-rw-r-- 1 cs1c cs1c    202 Sep 24 19:29 makefile
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ make all
+g++ -std=c++17 -Wall -g hw06.cpp -o hw06 
+l]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ ls -l
+total 340
+-rwxrwxr-x 1 cs1c cs1c 141768 Sep 24 19:30 [0m[01;32mhw06[0m
+-rw-rw-r-- 1 cs1c cs1c   2344 Sep 24 19:29 hw06.cpp
+-rw-rw-r-- 1 cs1c cs1c 196358 Sep 24 19:29 hw06.exe
+-rw-rw-r-- 1 cs1c cs1c      0 Sep 24 19:30 hw06.scr
+-rw-rw-r-- 1 cs1c cs1c    202 Sep 24 19:29 makefile
+]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ ./hw06
+Please enter a new line: 
+abcdefghik jklk mnopqrstuvwxyz
+
+Enter indices to reverse at
+Index 1: 11
+Index 2: 18
+
+String Reversed
+abcdefghijksrqponmltuvwxyz
+
+Enter indices to reverse at
+Index 1: 4
+Index 2: 22
+
+String Reversed
+abcdwvutsrqponmlkjihgfexyz
+
+Enter indices to reverse at
+Index 1: 0
+Index 2: 25
+
+String Reversed
+zyxwvutsrqponmlkjihgfedcba]0;cs1c@cs1c-VirtualBox: ~/Documents/CS1C/VSCode/Homework/HW06[01;32mcs1c@cs1c-VirtualBox[00m:[01;34m~/Documents/CS1C/VSCode/Homework/HW06[00m$ exit
+exit
+
+Script done on 2023-09-24 19:31:14-07:00 [COMMAND_EXIT_CODE="0"]
