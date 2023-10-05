@@ -9,8 +9,13 @@ using namespace std;
 class InvManagement
 {
 private:
+    string itemName;
+    double itemCost;
+    int itemQuantity;
 
 public:
     InvManagement();
+    InvManagement(string name, double cost, int quantity);
     ~InvManagement();
+    void print();
 };
