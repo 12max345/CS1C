@@ -8,7 +8,7 @@
 
 // g++ -g -o hw07 hw07.cpp
 
-#include "InvManagement.h"
+#include "ManageInventory.h"
 
 int main()
 {
