@@ -7,9 +7,9 @@ using namespace std;
 
 struct Item
 {
-    string name;
-    float cost;
-    int quantity;
+    string *name;
+    float *cost;
+    int *quantity;
 };
 
 const int MAX_SIZE = 50;
@@ -18,14 +18,14 @@ const int MAX_SIZE = 50;
 class ManageInventory
 {
 private:
-    int size{MAX_SIZE};
-    int count;
-    Item **p_pInventoryItems;
+    const int *size{&MAX_SIZE};
+    int *count;
+    Item InventoryItems[];
 
 public:
-    ManageInventory() : count{0}, p_pInventoryItems{new Item *[size]} {};
-    ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {};
+    ManageInventory();
+    ManageInventory(int size);
     ~ManageInventory();
-    void addItem(string name, int quantity, float cost);
-    void print();
+    void addItem(string name, float cost, int quantity);
+    void print() const;
 };
