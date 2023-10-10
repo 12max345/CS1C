@@ -5,22 +5,24 @@
 
 using namespace std;
 
+// Struct that includes items traits
 struct Item
 {
-    string *name;
-    float *cost;
-    int *quantity;
+    string name;
+    float cost;
+    int quantity;
 };
 
+// Global variable that sets maximum items to 50 if not specified
 const int MAX_SIZE = 50;
 
 // ManageInventory class which is the base class
 class ManageInventory
 {
 private:
-    const int *size{&MAX_SIZE};
-    int *count;
-    Item InventoryItems[];
+    int size;
+    int count;
+    Item **p_pInventoryItems;
 
 public:
     ManageInventory();

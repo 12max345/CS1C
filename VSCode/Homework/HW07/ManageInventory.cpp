@@ -1,32 +1,27 @@
-#include "ManageInventory.h"
+#include "ManageInventory.hpp"
 
-ManageInventory::ManageInventory() : count{0}, pInventoryItems{pInventoryItems[size]} {}
+ManageInventory::ManageInventory() : size{MAX_SIZE}, count{0}, p_pInventoryItems{new Item *[size]} {}
 
-ManageInventory::ManageInventory(int size) : size{size}, count{0}, pInventoryItems{ *Item *[size]} {}
+ManageInventory::ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
 
 ManageInventory::~ManageInventory()
 {
-    delete[] pInventoryItems;
+    delete[] p_pInventoryItems;
 }
 
 void ManageInventory::addItem(string name, float cost, int quantity)
 {
-    Item inventoryItems[size];
-    (*pInventoryItems)[count].name = name;
-    (*pInventoryItems)[count].cost = cost;
-    (*pInventoryItems)[count].quantity = quantity;
-    count++;
+    p_pInventoryItems[count++] = new Item { name, cost, quantity };
 }
 
 void ManageInventory::print() const
 {
-    cout << size;
-    cout << "Test Name: " << pInventoryItems[0]->name;
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Item Name: " << pInventoryItems[i]->name << endl
-             << "Item Cost: " << pInventoryItems[i]->cost << endl
-             << "Item Quantity: " << pInventoryItems[i]->quantity << endl
-             << endl;
-    }
+    cout << "Test Name: " << p_pInventoryItems[0]->name << endl;
+    // for (int i = 0; i < size; i++)
+    // {
+    //     cout << "Item Name: " << *p_pInventoryItems[i].name << endl
+    //          << "Item Cost: " << *p_pInventoryItems[i].cost << endl
+    //          << "Item Quantity: " << *p_pInventoryItems[i].quantity << endl
+    //          << endl;
+    // }
 }

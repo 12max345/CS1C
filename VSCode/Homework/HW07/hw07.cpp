@@ -6,15 +6,16 @@
  * Due Date : 10/5/23
  *********************************************************/
 
-// g++ -g -o hw07 hw07.cpp ManageInventory.h ManageInventory.cpp
+// g++ -g -o hw07 hw07.cpp ManageInventory.hpp ManageInventory.cpp
 
-#include "ManageInventory.h"
+#include "ManageInventory.hpp"
 
 int main()
 {
     ManageInventory newInv(2);
-    newInv.addItem("Nike", 10, 11.99);
-    newInv.addItem("Spice", 5, 2.99);
+    newInv.print();
+    newInv.addItem("Nike", 12.99, 10);
+    newInv.addItem("Spice", 2.99, 5);
 
     newInv.print();
 
