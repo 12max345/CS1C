@@ -13,7 +13,6 @@
 int main()
 {
     ManageInventory newInv(2);
-    newInv.print();
     newInv.addItem("Nike", 12.99, 10);
     newInv.addItem("Spice", 2.99, 5);
 
