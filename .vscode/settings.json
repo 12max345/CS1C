@@ -9,6 +9,10 @@
         "array": "cpp",
         "string_view": "cpp",
         "initializer_list": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "deque": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xutility": "cpp"
     }
 }

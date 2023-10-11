@@ -26,7 +26,9 @@ private:
 public:
     ManageInventory();
     ManageInventory(int size);
+    ManageInventory(const ManageInventory &cpy);
     ~ManageInventory();
     void addItem(string name, float cost, int quantity);
+    void purchaseItem(string name, int quantity);
     void print() const;
 };

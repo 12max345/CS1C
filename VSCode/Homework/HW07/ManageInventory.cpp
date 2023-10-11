@@ -4,6 +4,21 @@ ManageInventory::ManageInventory() : size{MAX_SIZE}, count{0}, p_pInventoryItems
 
 ManageInventory::ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
 
+ManageInventory::ManageInventory(const ManageInventory &cpy)
+{
+    cout << "COPY CONST CALLED\n";
+    size = cpy.size;
+    count = cpy.count;
+
+    Item **nInv = new Item *[cpy.size];
+    for (int i = 0; i < cpy.count; i++)
+    {
+        nInv[i] = cpy.p_pInventoryItems[i];
+    }
+    p_pInventoryItems = nInv;
+    nInv = nullptr;
+}
+
 ManageInventory::~ManageInventory()
 {
     for (int i = 0; i < count; i++)
@@ -16,13 +31,24 @@ void ManageInventory::addItem(string name, float cost, int quantity)
     p_pInventoryItems[count++] = new Item{name, cost, quantity};
 }
 
+void ManageInventory::purchaseItem(string name, int quantity)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (p_pInventoryItems[i]->name == name)
+        {
+            p_pInventoryItems[i]->quantity = p_pInventoryItems[i]->quantity - quantity;
+        }
+    }
+}
+
 void ManageInventory::print() const
 {
     for (int i = 0; i < size; i++)
     {
-        cout << "Item Name: " << p_pInventoryItems[i]->name << endl
-             << "Item Cost: " << p_pInventoryItems[i]->cost << endl
-             << "Item Quantity: " << p_pInventoryItems[i]->quantity << endl
+        cout << "Name: " << p_pInventoryItems[i]->name << endl
+             << "Cost: $" << p_pInventoryItems[i]->cost << endl
+             << "Quantity: " << p_pInventoryItems[i]->quantity << endl
              << endl;
     }
 }
