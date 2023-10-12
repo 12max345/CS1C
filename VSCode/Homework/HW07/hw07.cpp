@@ -24,10 +24,12 @@ int main()
     ManageInventory newInv(startInv);
 
     newInv.purchaseItem("Nike Basketball Shoes", 2);
+    newInv.purchaseItem("Under Armor T-Shirt", 3);
+    newInv.purchaseItem("Brooks Running Shoes", 1);
+    newInv.purchaseItem("Nike Shorts", 4);
     newInv.print();
-    cout << "---------------------------------------" << endl;
+    cout << "---------------------------------------\nShould Be Original Below" << endl;
     startInv.print();
-    cout << "test";
 
     return 0;
 };

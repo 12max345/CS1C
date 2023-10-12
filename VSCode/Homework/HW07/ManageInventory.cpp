@@ -11,9 +11,9 @@ ManageInventory::ManageInventory(const ManageInventory& cpy)
     count = cpy.count;
 
     p_pInventoryItems = new Item*[cpy.size];
-    for (int i = 0; i < count; ++i)
+    for (int i = 0; i < cpy.count; ++i)
     {
-        p_pInventoryItems[i] = cpy.p_pInventoryItems[i];
+        p_pInventoryItems[i] = new Item{cpy.p_pInventoryItems[i]->name, cpy.p_pInventoryItems[i]->cost, cpy.p_pInventoryItems[i]->quantity};
     }
 }
 
@@ -31,11 +31,12 @@ void ManageInventory::addItem(string name, float cost, int quantity)
 
 void ManageInventory::purchaseItem(string name, int quantity)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < count; i++)
     {
         if (p_pInventoryItems[i]->name == name)
         {
             p_pInventoryItems[i]->quantity -= quantity;
+            p_pInventoryItems[i]->cost *= 0.825;
         }
     }
 }
