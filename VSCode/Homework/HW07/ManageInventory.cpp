@@ -4,19 +4,17 @@ ManageInventory::ManageInventory() : size{MAX_SIZE}, count{0}, p_pInventoryItems
 
 ManageInventory::ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
 
-ManageInventory::ManageInventory(const ManageInventory &cpy)
+ManageInventory::ManageInventory(const ManageInventory& cpy)
 {
     cout << "COPY CONST CALLED\n";
     size = cpy.size;
     count = cpy.count;
 
-    Item **nInv = new Item *[cpy.size];
-    for (int i = 0; i < cpy.count; i++)
+    p_pInventoryItems = new Item*[cpy.size];
+    for (int i = 0; i < count; ++i)
     {
-        nInv[i] = cpy.p_pInventoryItems[i];
+        p_pInventoryItems[i] = cpy.p_pInventoryItems[i];
     }
-    p_pInventoryItems = nInv;
-    nInv = nullptr;
 }
 
 ManageInventory::~ManageInventory()
@@ -37,7 +35,7 @@ void ManageInventory::purchaseItem(string name, int quantity)
     {
         if (p_pInventoryItems[i]->name == name)
         {
-            p_pInventoryItems[i]->quantity = p_pInventoryItems[i]->quantity - quantity;
+            p_pInventoryItems[i]->quantity -= quantity;
         }
     }
 }

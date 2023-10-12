@@ -27,6 +27,7 @@ int main()
     newInv.print();
     cout << "---------------------------------------" << endl;
     startInv.print();
+    cout << "test";
 
     return 0;
 };
