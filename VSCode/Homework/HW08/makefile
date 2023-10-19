@@ -2,13 +2,13 @@ CC = g++
 FLAGS = -std=c++17 -Wall -g
 OBJS = 
 
-all: hw07
+all: hw08
 
-hw07: hw07.cpp
-	$(CC) $(FLAGS) hw07.cpp -o hw07 $(OBJS)
+hw08: hw08.cpp
+	$(CC) $(FLAGS) hw08.cpp -o hw08 $(OBJS)
 
 clean:
-	rm *.o hw07 hw07.tar hw07.scr
+	rm *.o hw08 hw08.tar hw08.scr
 
 tar:
-	tar cf hw07.tar hw07.scr makefile hw07.cpp
+	tar cf hw08.tar hw08.scr makefile hw08.cpp
