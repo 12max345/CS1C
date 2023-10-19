@@ -36,12 +36,22 @@ void ManageInventory::purchaseItem(string name, int quantity)
         if (p_pInventoryItems[i]->name == name)
         {
             p_pInventoryItems[i]->quantity -= quantity;
-            p_pInventoryItems[i]->cost *= 0.825;
         }
     }
 }
 
 void ManageInventory::print() const
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Name: " << p_pInventoryItems[i]->name << endl
+             << "Cost: $" << p_pInventoryItems[i]->cost << endl
+             << "Quantity: " << p_pInventoryItems[i]->quantity << endl
+             << endl;
+    }
+}
+
+void ManageInventory::pReceipt() const
 {
     for (int i = 0; i < size; i++)
     {
