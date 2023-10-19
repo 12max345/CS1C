@@ -23,6 +23,8 @@ private:
     int size;
     int count;
     Item **p_pInventoryItems;
+    float preTax;
+    float postTax;
 
 public:
     // default constructor
@@ -67,5 +69,5 @@ public:
     void print() const;
 
     // receipt print method
-    void pReceipt() const;
+    void pReceipt();
 };

@@ -36,13 +36,14 @@ void ManageInventory::purchaseItem(string name, int quantity)
         if (p_pInventoryItems[i]->name == name)
         {
             p_pInventoryItems[i]->quantity -= quantity;
+            preTax += p_pInventoryItems[i]->cost;
         }
     }
 }
 
 void ManageInventory::print() const
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < count; i++)
     {
         cout << "Name: " << p_pInventoryItems[i]->name << endl
              << "Cost: $" << p_pInventoryItems[i]->cost << endl
@@ -51,13 +52,14 @@ void ManageInventory::print() const
     }
 }
 
-void ManageInventory::pReceipt() const
+void ManageInventory::pReceipt()
 {
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Name: " << p_pInventoryItems[i]->name << endl
-             << "Cost: $" << p_pInventoryItems[i]->cost << endl
-             << "Quantity: " << p_pInventoryItems[i]->quantity << endl
-             << endl;
-    }
+    float temp;
+    temp = preTax * 0.0825;
+    postTax = preTax + temp;
+    cout.precision(2);
+    cout << fixed;
+    cout << "Subtotal: $" << preTax << endl;
+    cout << "Tax: $" << temp << endl;
+    cout << "Total: $" << postTax << endl;
 }
