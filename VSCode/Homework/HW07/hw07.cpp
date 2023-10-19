@@ -36,13 +36,18 @@ int main()
     markInv.purchaseItem("Brooks Running Shoes", 1);
     markInv.purchaseItem("Nike Shorts", 4);
 
-    cout << "Item Inventory After Purchase";
+    cout << "Item Inventory After Purchase" << endl;
     markInv.print();
     cout << "---------------------------------------" << endl;
 
     // prints receipt of transaction
     cout << "Mark's Receipt" << endl;
     markInv.pReceipt();
+    cout << "---------------------------------------" << endl;
+
+    // original inventory printed
+    cout << "Original Inventory Before Purchase" << endl;
+    startInv.print();
 
     return 0;
 };

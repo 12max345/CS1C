@@ -6,7 +6,6 @@ ManageInventory::ManageInventory(int size) : size{size}, count{0}, p_pInventoryI
 
 ManageInventory::ManageInventory(const ManageInventory& cpy)
 {
-    cout << "COPY CONST CALLED\n";
     size = cpy.size;
     count = cpy.count;
 
