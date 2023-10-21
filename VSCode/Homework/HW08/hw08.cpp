@@ -44,11 +44,8 @@ namespace hw08
     void increment_reference(int &r)
     // pass a reference, increment value of r by 1
     {
-        r + 1;
+        r += 1;
     }
-
-    // Question 1 Response
-    // A pointer is a variable that holds an address in memory. A reference is a way to give an alias to a memory value. The difference between the two is that a pointer is meant to store the memory of another variable while a reference is meant to alias an already existing variable.
 
     //------------------------------------------------------------------------------
 
@@ -77,14 +74,12 @@ namespace hw08
                 // to compute the offset using pointer math
                 // offset from twoDD: #row (i) * #col + #col (j), result: pointer to array element
                 // ...
+                cout << twoDD[i * j + j] << " ";
             }
             cout << endl;
         }
         cout << endl;
     }
-
-    // Question 2 Response
-    // 
 
     //------------------------------------------------------------------------------
 
@@ -158,29 +153,40 @@ int main()
     int x = 10;
     // ... // [1.1] variable p of type pointer to int points to x (i.e. int* p = ?;), use & to get the address of x
     int *p = &x;
-    // ... // [1.2] variable q of type pointer to double is points to x
-    double *q = dynamic_cast<double>(*p);
+    // ... // [1.2] variable q of type pointer to double points to x
+    // double *q = &x; NOT ALLOWED because an int* pointer cannot initialize a double* pointer
     // ... // [1.3] update the value of p to 5, use * to assign to x through p
     *p = 5;
     // ... // [1.4] store the value of p in variable x2 of type int, use * to read x through p
     int x2 = *p;
     // ... // [1.5] variable p2 of type pointer to int points to x2, use & to get a pointer to x2
-
+    int *p2 = &x2;
     // ... // [1.6] assign p to p2, p2 and p both point to x
+    p2 = p;
     // ... // [1.7] point p to x2, what does p2 point to now?
+    *p = x2;
+    // The address of x2
 
     // complete the following reference examples
     // indicate if the requested operation is not allowed, why not?
     // Q#1 - reference examples
     int y = 50;
     // ... // [1.8] variable r of type reference to int refers to y (i.e. int& r = ?;), nothing special to do here in the initializer
+    int &r = y;
     // ... // [1.9] variable s of type reference to double refers to y
+    // double &s = y; NOT ALLOWED because int reference cannot refer to double reference
     // ... // [1.10] update the value of r to 10, assign to y through r (notice * is not needed)
+    r = 10;
     // ... // [1.11] store the value of r in variable y2 of type int, read y through r (notice * is not needed)
+    int y2 = r;
     // ... // [1.12] variable r2 of type reference to int refers to y2, get a reference to int y2
+    int &r2 = y2;
     // ... // [1.13] assign r to r2, the value of y is assigned to y2
+    r2 = r;
     // ... // [1.14] assign y2 to r, r2 and r both point to y2
+    r = y2;
     // ... // [1.15] variable r3 of type reference to int is defined but not initialized (i.e. does not refer to an int)
+    // int &r3; NOT ALLOWED because reference must represent a created value
 
     // Q#1 - pointer vs reference: increment functions
     // implementation the function definitions for the following increment operations
@@ -221,14 +227,26 @@ int main()
     pd2[5] = 6;
 
     // ... // [2.1] move pd three elements to the right
+    pd + 3;
+    
     // ... // [2.2] move pd six elements to the left
+    pd - 6;
+
     // pd += 1000;    // [2.3] // ... error explain
+    // Cannot assign a single value to an array
+
     // double d = *pd;// [2.4] // ... error explain
+    // Cannot assign a double to an array
+
     //*pd = 12.34;   // [2.5] // ... error explain
+    // Cannot reinitialize an array size
 
     // ... // [2.6] compute the number of elements between pd and pd2 by taking the difference between pd2 and pd
+    *pd2 - *pd;
     // int dif2 = pd + pd2; // [2.7] // ... error explain
+    // Values of pd and pd2 are not of int *
     // int dif3 = pd2 - pd3;// [2.8] // ... error explain
+    // Values of pd2 and pd3 are not of int *
 
     cout << endl
          << "print array of doubles forward and backward" << endl
@@ -237,6 +255,10 @@ int main()
     // [2.9] print array going forwards
     // p starts at address aDoubles[0], ends at address &aDoubles[9], increment p, cout value pointed to by p
     // for (double* p = // ... ) cout << // ...  << '\n';
+    for (double *p = &aDoubles[0]; p < &aDoubles[9]; p++)
+    {
+        cout << *p << endl;
+    }
     cout << endl;
 
     // [2.10] print array going backwards
@@ -347,4 +369,5 @@ int main()
 
 // WRITTEN ANSWERS
 
-// add written answers here ... Q#1 Q#3 Q#5
+// Question 1 Response
+// A pointer is a variable that holds an address in memory. A reference is a way to give an alias to a memory value. The difference between the two is that a pointer is meant to store the memory of another variable while a reference is meant to alias an already existing variable.
