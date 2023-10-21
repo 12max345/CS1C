@@ -83,6 +83,9 @@ namespace hw08
         cout << endl;
     }
 
+    // Question 2 Response
+    // 
+
     //------------------------------------------------------------------------------
 
     void print_2darray_dynamic_subscript(int **twoDD, int row, int col)
@@ -154,10 +157,15 @@ int main()
     // Q#1 - pointer examples
     int x = 10;
     // ... // [1.1] variable p of type pointer to int points to x (i.e. int* p = ?;), use & to get the address of x
+    int *p = &x;
     // ... // [1.2] variable q of type pointer to double is points to x
+    double *q = dynamic_cast<double>(*p);
     // ... // [1.3] update the value of p to 5, use * to assign to x through p
+    *p = 5;
     // ... // [1.4] store the value of p in variable x2 of type int, use * to read x through p
+    int x2 = *p;
     // ... // [1.5] variable p2 of type pointer to int points to x2, use & to get a pointer to x2
+
     // ... // [1.6] assign p to p2, p2 and p both point to x
     // ... // [1.7] point p to x2, what does p2 point to now?
 
