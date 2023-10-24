@@ -74,7 +74,7 @@ namespace hw08
                 // to compute the offset using pointer math
                 // offset from twoDD: #row (i) * #col + #col (j), result: pointer to array element
                 // ...
-                cout << twoDD[i * j + j] << " ";
+                cout << twoDD[i * col + j] << " ";
             }
             cout << endl;
         }
@@ -221,28 +221,35 @@ int main()
     double *pd2 = &aDoubles[7];  // point to aDoubles[7]
     double *pd3 = &aDoubles2[7]; // point to aDoubles[7]
 
-    *pd = 3;
-    pd[2] = 4;
-    pd[-3] = 5;
+    pd[-5] = 1.1;
+    pd[-4] = 2.2;
+    pd[-3] = 3.3;
+    pd[-2] = 4.4;
+    pd[-1] = 5.5;
+    *pd = 6.6;
+    pd[1] = 7.7;
+    pd[2] = 8.8;
+    pd[3] = 9.9;
+    pd[4] = 10.1;
     pd2[5] = 6;
 
     // ... // [2.1] move pd three elements to the right
-    pd + 3;
-    
+    pd += 3;
+
     // ... // [2.2] move pd six elements to the left
-    pd - 6;
+    pd -= 6;
 
     // pd += 1000;    // [2.3] // ... error explain
-    // Cannot assign a single value to an array
+    // out of bounds
 
     // double d = *pd;// [2.4] // ... error explain
-    // Cannot assign a double to an array
+    // Cannot assign a an array to a double
 
     //*pd = 12.34;   // [2.5] // ... error explain
     // Cannot reinitialize an array size
 
     // ... // [2.6] compute the number of elements between pd and pd2 by taking the difference between pd2 and pd
-    *pd2 - *pd;
+    pd2 - pd;
     // int dif2 = pd + pd2; // [2.7] // ... error explain
     // Values of pd and pd2 are not of int *
     // int dif3 = pd2 - pd3;// [2.8] // ... error explain
@@ -255,15 +262,19 @@ int main()
     // [2.9] print array going forwards
     // p starts at address aDoubles[0], ends at address &aDoubles[9], increment p, cout value pointed to by p
     // for (double* p = // ... ) cout << // ...  << '\n';
-    for (double *p = &aDoubles[0]; p < &aDoubles[9]; p++)
+    for (double *p = &aDoubles[0]; p <= &aDoubles[9]; p++)
     {
-        cout << *p << endl;
+        cout << *p << " ";
     }
     cout << endl;
 
     // [2.10] print array going backwards
     // p starts at address aDoubles[9], ends at address &aDoubles[0], decrement p, cout value pointed to by p
     // for (double* p = // ... ) cout << // ...  << '\n';
+    for (double *p = &aDoubles[9]; p >= &aDoubles[0]; p--)
+    {
+        cout << *p << " ";
+    }
     cout << endl;
 
     double *pd4 = &aDoubles[0];
@@ -272,8 +283,13 @@ int main()
     double *pd7 = &aDoubles2[5];
     // [2.11] using the equality operator, compare pointers to array elements
     // if (// ...) cout << "pointers point to the same element of the array" << endl;
+    if (pd4 == &aDoubles[0])
+    {
+        cout << "pointers point to the same element of the array" << endl;
+    }
     // [2.12] ... error explain
     // if (pd6 != pd7) cout << "pointers point to the different elements of the array" << endl;
+    // cannot use on two different arrays
 
     // complete the following function implementations
     // Q#3 - pointer arithmetic, indexing multidimensional arrays
@@ -371,3 +387,9 @@ int main()
 
 // Question 1 Response
 // A pointer is a variable that holds an address in memory. A reference is a way to give an alias to a memory value. The difference between the two is that a pointer is meant to store the memory of another variable while a reference is meant to alias an already existing variable.
+
+// Question 3 Response
+// TwoDoubles is asked to be passed as a function and will be casted as a double * in order to allocate the 2d array through memory linearly.
+
+// Question 5 Response
+// It is being pointed to externally by another pointer. We need to pass it since the array needs to allocated dynamically in order to delete it after it has been used.
