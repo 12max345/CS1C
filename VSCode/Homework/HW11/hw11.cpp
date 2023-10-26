@@ -222,7 +222,7 @@ int main()
 
     // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
     //selectionSort( /* ... */ ); // [2.1] sort array in descending order
-    selectionSort();
+    selectionSort(array, 9, ascending(0, 8));
     printArray(array, 9);
  
     // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
