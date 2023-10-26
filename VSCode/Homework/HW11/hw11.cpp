@@ -199,23 +199,30 @@ int main()
 
     // function pointer assignments
     // ... // [1.1] declare and init function pointer fcnPtr1 to point to function foo
+    string (*fcnPtr1)() { & foo };
     // ... // [1.2] declare and init function pointer fcnPtr2 to point to function hoo
+    int (*fcnPtr2)(int) { &hoo };
     // ... // [1.3] declare and init function pointer fcnPtr3 to point to function goo
+    double (*fcnPtr3)(int, double) { &goo };
     // ... // [1.4] assign fcnPtr1 to point to boo
+    // NOT ALLOWED must return same type
     // ... // [1.5] assign fcnPtr2 to point to boo, okay - function pointer signature matches function boo
+    fcnPtr2 = &boo;
 
     // calling a function using a function pointer via explicit dereference
     // ... // [1.6] call function goo(2,5.0) through fcnPtr3 via explicit dereference
-
+    (*fcnPtr3)(2, 5.0);
     // calling a function using a function pointer via implicit dereference
     // ... // [1.7] call function goo(2,5.0) through fcnPtr3 implicit dereference
-
+    fcnPtr3(2, 5.0);
+    
 	// Q#2 - function pointers - calling user defined comparison functions in algorithms
 
     int array[9] = { 3, 7, 9, 5, 6, 1, 8, 2, 4 };
 
     // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
     //selectionSort( /* ... */ ); // [2.1] sort array in descending order
+    selectionSort();
     printArray(array, 9);
  
     // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
