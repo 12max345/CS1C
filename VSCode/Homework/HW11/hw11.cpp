@@ -8,6 +8,8 @@
  * SECTION    : 10/26/23
 *************************************************************************/
 
+// g++ -g -o hw11 hw11.cpp
+
 #include <iostream>
 #include <algorithm>
 
@@ -59,7 +61,7 @@ double goo(int x, double y)
 // (footnote 1)
 
 // Note our user-defined comparison is the third parameter
-void selectionSort(int *array, int size, void * /* TEMP REPLACE ... */ )
+void selectionSort(int *array, int size, bool (*comparisonFcn)(int, int))
 {
     // Step through each element of the array
     for (int startIndex = 0; startIndex < size; ++startIndex)
@@ -71,7 +73,7 @@ void selectionSort(int *array, int size, void * /* TEMP REPLACE ... */ )
         for (int currentIndex = startIndex + 1; currentIndex < size; ++currentIndex)
         {
             // If the current element is smaller/larger than our previously found smallest
-            if (false /* TEMP REPLACE ... */ ) // COMPARISON DONE HERE
+            if (comparisonFcn(array[bestIndex], array[currentIndex])) // COMPARISON DONE HERE
                 // This is the new smallest/largest number for this iteration
                 bestIndex = currentIndex;
         }
@@ -87,9 +89,7 @@ void selectionSort(int *array, int size, void * /* TEMP REPLACE ... */ )
 // (Note: it's exactly the same as the previous ascending() function)
 bool ascending(int x, int y)
 {
-    // ...
-              // temp, replace when defining function
-    return 0; // included so that incomplete lab code will compile
+    return x > y;
 }
 
 //------------------------------------------------------------------------------
@@ -97,19 +97,15 @@ bool ascending(int x, int y)
 // Here is a comparison function that sorts in descending order
 bool descending(int x, int y)
 {
-    // ...
-              // temp, replace when defining function
-    return 0; // included so that incomplete lab code will compile
+    return x < y;
 }
 
 //------------------------------------------------------------------------------
  
-// custom comparison function, explain how your function sorts array components
+// This comparison function will push an element forward by 1
 bool custom_sort(int x, int y)
 {
-    // ...
-              // temp, replace when defining function
-    return 0; // included so that incomplete lab code will compile
+    return x != y;
 }
 
 //------------------------------------------------------------------------------
@@ -190,8 +186,8 @@ int main()
 	cout << endl;
 	cout << "************************************** " << endl;
 	cout << "*           Running HW11             * " << endl;
-	cout << "*      Programmed by First Last      * " << endl;
-	cout << "*      CS1C Date & Time              * " << endl;
+	cout << "*   Programmed by Aden Malikyar      * " << endl;
+	cout << "*      CS1C 10/26/23                 * " << endl;
 	cout << "************************************** " << endl;
 	cout << endl;
 
@@ -220,17 +216,16 @@ int main()
 
     int array[9] = { 3, 7, 9, 5, 6, 1, 8, 2, 4 };
 
-    // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
-    //selectionSort( /* ... */ ); // [2.1] sort array in descending order
-    selectionSort(array, 9, ascending(0, 8));
+    // [2.1] sort array in descending order
+    selectionSort(array, 9, descending);
     printArray(array, 9);
  
-    // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
-    //selectionSort( /* ... */ ); // [2.2] sort array in ascending order
+    // [2.2] sort array in ascending order
+    selectionSort(array, 9, ascending);
     printArray(array, 9);
  
-    // TEMP - COMPLETE FUNCTION CALL AND UNCOMMENT LINE BELOW
-    //selectionSort( /* ... */ ); // [2.3] sort array via custom_sort algorithm
+    // [2.3] sort array via custom_sort algorithm
+    selectionSort(array, 9, custom_sort);
     printArray(array, 9);
 
 	// Q#3,4 - virtual function tables & calls
@@ -261,28 +256,28 @@ int main()
 /**************************************************/
 
 /******* D1 Class Virtual Function Table **********/
-/* virtual function1() -> ...FILL IN MISSING CALL */
-/* virtual function2() -> ...FILL IN MISSING CALL */
+/* virtual function1() -> calls Base::function1() */
+/* virtual function2() -> calls   D1::function2() */
 /**************************************************/
 
 /******* D2 Class Virtual Function Table **********/
-/* virtual function1() -> ...FILL IN MISSING CALL */
-/* virtual function2() -> ...FILL IN MISSING CALL */
-/* virtual function3() -> ...FILL IN MISSING CALL */
+/* virtual function1() -> calls   D2::function1() */
+/* virtual function2() -> calls Base::function2() */
+/* virtual function3() -> calls   D2::function3() */
 /**************************************************/
 
 /******* D3 Class Virtual Function Table **********/
-/* virtual function1() -> ...FILL IN MISSING CALL */
-/* virtual function2() -> ...FILL IN MISSING CALL */
-/* virtual function3() -> ...FILL IN MISSING CALL */
+/* virtual function1() -> calls   D2::function1() */
+/* virtual function2() -> calls   D3::function2() */
+/* virtual function3() -> calls   D2::function3() */
 /**************************************************/
 
 // (footnote 1 - source) adapted from learncpp.com - Alex - 12.5 the virtual table
 
 // Q#4
 
-// add written answers here
+// The pointer of dtr from Base is pointing to the address of a D2 object named d2. It then calls the function1() which will calls function1() inside of D2, since D2 is redefining the function.
 
 // Q#5
 
-// add written answers here
+// The problem is the data from derived being completely cut off from the rest of the data. In order to solve this, a base class function must be made pure virtual in order to retain data.
