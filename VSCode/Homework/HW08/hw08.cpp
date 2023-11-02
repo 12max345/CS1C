@@ -109,7 +109,7 @@ namespace hw08
                 // to compute the offset using pointer math
                 // offset from twoDD: move to the correct row, add #row (i), dereference to obtain pointer to row
                 //                    next, add #col (j), result: pointer to array element
-                // ...
+                cout << *twoDD[i * col + j] << " ";
             }
             cout << endl;
         }
@@ -126,7 +126,8 @@ namespace hw08
         // function responsible for cleaning up (i.e. deleting) memory allocated for pi_array
         // do stuff here with pi_array
         double *pd_array = new double[array_size];
-        // ...    // dynamic memory allocated for pi_array not needed any longer, free it
+        // dynamic memory allocated for pi_array not needed any longer, free it
+        delete[] pi_array;
         return pd_array;
     }
 
@@ -319,9 +320,10 @@ int main()
         double *qd = new double[hw08::DYNAMIC_SIZE]; // [4.4] allocate DYNAMIC_SIZE doubles (an array of DYNAMIC_SIZE doubles)
 
         // pi = pd;  // [4.5] pi points to pd
-        //  ... error explain
+        // Cannot convert an int to a double pointer
+
         // pd = pi;  // [4.6] pd points to pi
-        //  ... error explain
+        // Cannot convert an a double to an int pointer due to memory being assigned as a double
 
         double x = *pd;        // read the (first) object pointed to by pd
         double y = qd[5];      // read the sixth object pointed to by qd
@@ -338,8 +340,11 @@ int main()
         cout << ri2 << endl; // ri2 refers to *qi
         cout << ri3 << endl; // ri3 refers to qi
 
-        delete pi;    // [4.7] how are the values of ri, ri2, ri3 affected by delete statement?
+        delete pi; // [4.7] how are the values of ri, ri2, ri3 affected by delete statement?
+        // By deleting pi, the program will forget its pointer of the object, but the address of ri stays the same. The others are unaffected.
+
         delete[] ri3; // [4.8] how are the values of ri, ri2, ri3 affected by delete statement?
+        // Deleteing ri3 with an array deleted will do the same thing as before, but with an array. The others are unaffected.
 
         cout << endl
              << "ri, ri2, ri3 after delete" << endl
@@ -353,18 +358,21 @@ int main()
 
     double *array_of_doubles = hw08::dynamic_allocation_array_doubles(1000);
     // use array_of_doubles here
-    // ... // [4.9] free array, no longer needed
+    // [4.9] free array, no longer needed
+    delete[] array_of_doubles;
 
     // Q#5 - dynamic 2d arrays, indexing via subscript operator, pointer arithmetic
-
     // tic tac toe board is an array of int pointers
     // each int pointer in the board points to a row
 
     // declare a pointer to an array of int pointers (i.e. a pointer to a pointer of type int)
     int **p_p_tictactoe = new int *[hw08::TIC_TAC_TOE_SIZE];
     // ...  // [5.1] row1: dynamically allocate int[TIC_TAC_TOE_SIZE], use initializer list to init to {1,0,0}
+    p_p_tictactoe[0] = new int[3]{1, 0, 0};
     // ...  // [5.2] row2: dynamically allocate int[TIC_TAC_TOE_SIZE], use initializer list to init to {0,1,0}
+    p_p_tictactoe[1] = new int[3]{0, 1, 0};
     // ...  // [5.3] row3: dynamically allocate int[TIC_TAC_TOE_SIZE], use initializer list to init to {0,0,1}
+    p_p_tictactoe[2] = new int[3]{0, 0, 1};
 
     // print 2dints via subscript operator
     hw08::print_2darray_dynamic_subscript(p_p_tictactoe, hw08::TIC_TAC_TOE_SIZE, hw08::TIC_TAC_TOE_SIZE);
@@ -374,9 +382,10 @@ int main()
     // clean up board, go in reverse order of declaration
 
     // [5.4] delete individual rows (i.e. rows are int arrays, use delete [])
-    // for(// ...) // ...
+    for (int i = 0; i < 2; i++)
+        delete p_p_tictactoe[i];
     // [5.5] delete board (board is an array of int pointers, use delete [])
-    // ...
+    delete[] p_p_tictactoe;
 
     return 0;
 }
